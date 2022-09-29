@@ -2,8 +2,11 @@
 name = "eko"
 version = "0.1.0"
 edition = "2021"
-description = "Manipulate and/or inspect strings"
+description = "Transform or inspect strings"
 authors = ["Craole <iamcraole@gmail.com>"]
 
 [dependencies]
-structopt = "0.3.26"
+change-case = "0.2.0"
+convert_case = "0.6.0"
+regex = "1.6.0"
+structopt = { version = "0.3.26", features = ["color"] }
