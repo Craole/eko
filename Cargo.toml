@@ -1,0 +1,9 @@
+[package]
+name = "eko"
+version = "0.1.0"
+edition = "2021"
+description = "Manipulate and/or inspect strings"
+authors = ["Craole <iamcraole@gmail.com>"]
+
+[dependencies]
+structopt = "0.3.26"
