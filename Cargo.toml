@@ -6,7 +6,6 @@ description = "Transform or inspect strings"
 authors = ["Craole <iamcraole@gmail.com>"]
 
 [dependencies]
-change-case = "0.2.0"
+clap = { version = "4.0.3", features = ["derive", "env", "cargo", "debug"] }
 convert_case = "0.6.0"
-regex = "1.6.0"
-structopt = { version = "0.3.26", features = ["color"] }
+structopt = "0.3.26"

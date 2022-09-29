@@ -1,5 +1,6 @@
 #![allow(dead_code, unused_imports)]
 use structopt::StructOpt;
+use clap::Parser;
 
 use convert_case::{
     Case::{Camel, Cobol, Flat, Kebab, Pascal, ScreamingSnake, Snake, Title, UpperFlat},
