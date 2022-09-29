@@ -1,6 +1,7 @@
 use clap::{Arg, ArgAction, Command};
 
-pub fn cli() {
+#[allow(dead_code)]
+pub fn clap_opts() {
     let matches = Command::new(env!("CARGO_PKG_NAME"))
         .about(env!("CARGO_PKG_DESCRIPTION"))
         .version(env!("CARGO_PKG_VERSION"))

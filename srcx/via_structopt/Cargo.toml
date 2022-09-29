@@ -1,9 +1,0 @@
-[package]
-name = "eko_using_structopt"
-version = "0.1.0"
-edition = "2021"
-
-
-[dependencies]
-# convert_case = "0.6.0"
-structopt = { version = "0.3.26", features = ["color"] }

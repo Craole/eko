@@ -1,8 +1,9 @@
-use via_structopt::options::opts_main::opts;
+use cli::structopt::opts_main::struct_opts;
 
-mod via_structopt;
+mod cli;
+mod core;
 
 fn main() {
-    // run()
-    opts()
+    struct_opts();
+    // clap_opts();
 }

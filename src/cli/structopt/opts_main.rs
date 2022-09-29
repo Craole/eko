@@ -1,17 +1,15 @@
-use structopt::StructOpt;
-
-use crate::process::{inspect::check, print::echo, transform::modify};
+use crate::core::{inspect::check, print::echo, transform::modify};
 
 use super::opts_sub::SubCommand;
-
-// use super::{inspect::check, opts_sub::SubCommand, print::echo, transform::modify};
+use structopt::StructOpt;
 
 // Main Options
 #[derive(Debug, StructOpt)]
 #[structopt(
-    name = "eko",
-    author = "Craole <iamcraole@gmail.com>",
-    about = "Transform or inspect strings"
+    name = env!("CARGO_PKG_NAME"),
+    author = env!("CARGO_PKG_AUTHORS"),
+    about = env!("CARGO_PKG_DESCRIPTION"),
+    version = env!("CARGO_PKG_VERSION"),
 )]
 
 pub struct Opt {
@@ -23,7 +21,7 @@ pub struct Opt {
     cmd: SubCommand,
 }
 
-pub fn opts() {
+pub fn struct_opts() {
     let args = Opt::from_args();
     match args.cmd {
         SubCommand::Inspect(opt) => {
