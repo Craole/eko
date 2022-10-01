@@ -12,6 +12,7 @@ keywords = ["cli", "string", "case", "transform", "inspect"]
 categories = ["command-line-utilities"]
 
 [dependencies]
-clap = { version = "4.0.3", features = ["derive", "env", "cargo", "debug"] }
+clap = { version = "4.0.4", features = ["derive"] }
 convert_case = "0.6.0"
-structopt = "0.3.26"
+# structopt = "0.3.26"
+unicode-segmentation = "1.10.0"

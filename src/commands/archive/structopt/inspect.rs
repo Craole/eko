@@ -1,4 +1,8 @@
-pub fn check(input: &String, debug: bool, args: &crate::cli::structopt::opts_sub::InspectOptions) {
+pub fn inspect(
+    input: &String,
+    debug: bool,
+    args: &crate::cli::structopt::opts_sub::InspectOptions,
+) {
     println!("Inspect: \"{}\"", input);
     if debug {
         println!("{:#?}", args);

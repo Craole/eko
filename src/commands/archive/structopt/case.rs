@@ -3,13 +3,13 @@ use convert_case::{
     Casing,
 };
 
-pub fn modify(
+pub fn case(
     input: &String,
     debug: bool,
-    args: &crate::cli::structopt::opts_sub::TransformOptions,
+    args: &crate::cli::structopt::opts_sub::CaseOptions,
 ) {
     if debug {
-        println!("Transform: \"{}\"", input);
+        println!("Change case: \"{}\"", input);
         println!("{:#?}", args);
     }
     if args.lower {
@@ -39,15 +39,4 @@ pub fn modify(
     if args.screamingsnake {
         println!("{}", input.to_case(ScreamingSnake));
     }
-    // if args.reverse {
-    //     println!("{}", input.to_case(ScreamingSnake));
-    // }
-    // if args.prefix {
-    //     let result = input.to_lowercase();
-    //     // println!("{}", result);
-    //     result
-    // }
-    // if args.suffix {
-    //     println!("{}", input.to_case(ScreamingSnake));
-    // }
 }

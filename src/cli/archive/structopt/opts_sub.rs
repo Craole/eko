@@ -1,16 +1,5 @@
 use structopt::StructOpt;
 
-// Subcommands
-#[derive(Debug, StructOpt)]
-pub enum SubCommand {
-    #[structopt(name = "echo", about = "Use `echo` to print to STDOUT")]
-    Print(PrintOptions),
-    #[structopt(name = "mod", about = "Use `mod` to transform strings")]
-    Transform(TransformOptions),
-    #[structopt(name = "insp", about = "Use `insp` to inspect strings")]
-    Inspect(InspectOptions),
-}
-
 // Subcommand - Inspect
 #[derive(Debug, StructOpt)]
 pub struct InspectOptions {
@@ -37,8 +26,9 @@ pub struct PrintOptions {
     pub center: bool,
 }
 
+    // Subcommand - Case
 #[derive(Debug, StructOpt)]
-pub struct TransformOptions {
+pub struct CaseOptions {
     #[structopt(short = "l", long, help = "Transforms a string to lowercase")]
     pub lower: bool,
     #[structopt(short = "u", long, help = "Transforms a string to uppercase")]
@@ -77,20 +67,24 @@ pub struct TransformOptions {
         help = "Uppercase and delimited by underscores (_)."
     )]
     pub screamingsnake: bool,
-    // #[structopt(short, long, help = "Reverses a string")]
-    // pub reverse: bool,
-    // #[structopt(
-    //     // short = "pre",
-    //     long,
-    //     help = "Adds a prefix to the string",
-    //     env = "STRINGS__PREFIX"
-    // )]
-    // pub prefix: Option<String>,
-    // #[structopt(
-    //     // short = "suf",
-    //     long,
-    //     help = "Adds a suffix to the string",
-    //     env = "STRINGS__SUFFIX"
-    // )]
-    // pub suffix: Option<String>,
+}
+
+#[derive(Debug, StructOpt)]
+pub struct ModifyOptions {
+    #[structopt(short, long, help = "Reverses a string")]
+    pub reverse: bool,
+    #[structopt(
+        // short = "pre",
+        long,
+        help = "Adds a prefix to the string",
+        env = "STRINGS__PREFIX"
+    )]
+    pub prefix: Option<String>,
+    #[structopt(
+        // short = "suf",
+        long,
+        help = "Adds a suffix to the string",
+        env = "STRINGS__SUFFIX"
+    )]
+    pub suffix: Option<String>,
 }

@@ -1,3 +1,4 @@
 pub mod inspect;
+pub mod modify;
 pub mod print;
-pub mod transform;
+pub mod case;
