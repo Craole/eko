@@ -223,9 +223,10 @@ mod test {
     use std::collections::HashSet;
     use std::iter::FromIterator;
 
-    use crate::commands::case::case::Case;
-    use crate::commands::case::transform::Modifiable;
-    use crate::commands::case::types::boundry::Boundary;
+
+    use crate::functions::case::{
+        lib::{case::Case, transform::Modifiable, boundry::Boundary},
+    };
 
     #[test]
     fn detect_many_cases() {

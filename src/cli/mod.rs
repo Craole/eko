@@ -1,5 +1,7 @@
-// pub mod clap;
-// pub mod structopt;
-// pub mod args;
-// mod derive;
-// pub mod builder;
+mod commands;
+mod lib;
+
+pub fn init() {
+    // lib::clap_build::args();
+    lib::clap_derive::args();
+}

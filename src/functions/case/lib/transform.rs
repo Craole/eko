@@ -1,8 +1,6 @@
 #![allow(dead_code)]
 
-use super::{types::{boundry::Boundary, conversion::Converter}, case::Case};
-// use super::{case::Case, boundry::Boundary, conversion::Converter};
-
+use super::{boundry::Boundary, case::Case, conversion::Converter};
 pub trait Modifiable<T: AsRef<str>> {
     fn to_case(&self, case: Case) -> String;
 

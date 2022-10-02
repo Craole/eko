@@ -1,7 +1,6 @@
 #![allow(dead_code)]
 
-use super::types::{pattern::Pattern, boundry::Boundary};
-// use super::{boundry::Boundary, pattern::Pattern};
+use super::{pattern::Pattern, boundry::Boundary};
 
 #[derive(Eq, PartialEq, Hash, Clone, Copy, Debug)]
 pub enum Case {

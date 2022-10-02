@@ -1,6 +1,7 @@
 #![allow(dead_code)]
-use crate::commands::case::utilities::check_char::{is_digit, is_lowercase, is_uppercase};
 use unicode_segmentation::UnicodeSegmentation;
+
+use crate::functions::case::utilities::check_char::{is_digit, is_lowercase, is_uppercase};
 
 #[derive(Clone, Copy, Eq, PartialEq, Debug)]
 pub enum Boundary {

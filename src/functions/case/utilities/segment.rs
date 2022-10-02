@@ -1,5 +1,5 @@
 use unicode_segmentation::UnicodeSegmentation;
-use crate::commands::case::types::boundry::Boundary;
+use crate::functions::case::lib::boundry::Boundary;
 
 // #![allow(dead_code)]
 

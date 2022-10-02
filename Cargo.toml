@@ -13,6 +13,6 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 clap = { version = "4.0.4", features = ["derive"] }
-convert_case = "0.6.0"
+# convert_case = "0.6.0"
 # structopt = "0.3.26"
 unicode-segmentation = "1.10.0"

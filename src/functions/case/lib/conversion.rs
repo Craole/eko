@@ -1,7 +1,8 @@
 #![allow(dead_code)]
-use crate::commands::case::{utilities::segment::split, case::Case};
 
-use super::{boundry::Boundary, pattern::Pattern};
+use crate::functions::case::utilities::segment::split;
+
+use super::{boundry::Boundary, pattern::Pattern, case::Case};
 
 pub struct Converter {
     pub boundaries: Vec<Boundary>,
