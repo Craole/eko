@@ -1,2 +1,2 @@
-pub mod clap_derive;
-pub mod clap_build;
+pub mod builder;
+pub mod derive;
