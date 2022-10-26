@@ -57,7 +57,6 @@ use clap::ValueEnum;
 
 #[derive(ValueEnum, Copy, Clone, Debug, PartialEq, Eq)]
 pub enum CaseType {
-    Same,
     Flat,
     Delimited,
 }

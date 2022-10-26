@@ -1,6 +1,6 @@
-use std::path::PathBuf;
+// use std::path::PathBuf;
 
-use clap::{Args, Parser};
+use clap::{Parser, ValueEnum};
 
 use crate::cli::commands::case::lib::CaseType;
 
@@ -11,21 +11,11 @@ pub struct Cli {
     #[arg(short = 'd', long)]
     pub verbose: bool,
 
-    // #[command(subcommand)]
-    // pub command: Commands,
-    /// Text to process
-    // #[arg(short, long)]
-    // pub input: Vec<String>,
+    /// Accept text in the form of a STRING or FILE
+    #[arg(short, long, group = "input")]
+    pub text: Option<String>,
 
-    /// some regular input
-    #[arg(group = "input")]
-    file: Option<String>,
-
-    /// some special input argument
-    #[arg(long, group = "input")]
-    text: Option<String>,
-
-    /// Case    #[arg(short, requires = "input")]
+    /// Transform the case of the text
     #[arg(
         short,
         long,
@@ -33,11 +23,10 @@ pub struct Cli {
         require_equals = true,
         value_name = "Case",
         num_args = 0..=1,
-        // default_value_t = CaseType::Flat,
-        // default_missing_value = "same",
+        default_value_t = CaseType::Flat,
+        default_missing_value = "flat",
         value_enum
     )]
-    // #[arg(short, long)]
     pub case: CaseType,
 }
 
@@ -47,15 +36,19 @@ pub struct Cli {
 //     // Case(Case),
 // }
 
-#[derive(Debug, Args)]
-struct Input {
-    /// Optional name to operate on
-    text: Option<String>,
-
-    /// Sets a custom config file
-    #[arg(short, long, value_name = "FILE")]
-    file: Option<PathBuf>,
+#[derive(ValueEnum, Copy, Clone, Debug, PartialEq, Eq)]
+pub enum Input {
+    Text,
+    File,
 }
+
+// /// Optional name to operate on
+// #[arg(short, long, value_name = "TEXT")]
+// text: Option<String>,
+
+// /// Sets a custom config file
+// #[arg(short, long, value_name = "FILE")]
+// file: Option<PathBuf>,
 
 #[allow(dead_code)]
 pub fn args() {
@@ -69,9 +62,6 @@ pub fn args() {
     //     println!("{}", files[1]);
 
     match args.case {
-        CaseType::Same => {
-            println!("{}", "SAME")
-        }
         CaseType::Flat => {
             println!("{}", "FLAT")
         }

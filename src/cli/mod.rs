@@ -2,6 +2,6 @@ mod commands;
 mod lib;
 
 pub fn init() {
-    // lib::clap_build::args();
-    lib::derive::args();
+    lib::builder::args();
+    // lib::derive::args();
 }
